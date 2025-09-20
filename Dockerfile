@@ -1,4 +1,4 @@
-# Use official Node.js base image
+# Node.js base image
 FROM node:18
 
 # Set working directory in container
