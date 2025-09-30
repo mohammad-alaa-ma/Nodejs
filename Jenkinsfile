@@ -1,15 +1,22 @@
-node{
-  git branch: 'main', url: 'https://github.com/mohammad-alaa-ma/Nodejs.git'
-  stage('build'){
-    sh'echo "build stage"'
+pipeline{
+  agent any
+
+  stages{
+    stage('build'){
+        steps{
+            script{
+                echo "build in progress"
+            }
+        }
+    }
+
+    stage('test'){
+        steps{
+            script{
+                echo "test in progress"
+            }
+        }
+    }
   }
 
-  stage('test'){
-    if (env.BRANCH_NAME == "feat"){
-      sh'echo "test stage"'
-    }
-    else{
-      sh'echo "skip test stage"'
-    }
-}
 }
